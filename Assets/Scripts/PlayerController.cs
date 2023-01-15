@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rgbd2d;
     public float speed;
+   
+
     void Start()
     {
         
@@ -35,5 +37,13 @@ public class PlayerController : MonoBehaviour
             //stop
             rgbd2d.velocity = new Vector2(0f, 0f); 
         }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Door")
+            Debug.Log("Level Completed");
+        
+        
+
     }
 }
