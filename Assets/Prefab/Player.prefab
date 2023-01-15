@@ -146,3 +146,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rgbd2d: {fileID: 70642727}
   speed: 2
+  acceleration: 2
+  maxspeed: 60
