@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rgbd2d;
 
     public GameObject gamewonpanel;
+
+    public GameObject door;
 
     private bool isgamewon = false;
 
@@ -58,7 +62,9 @@ public class PlayerController : MonoBehaviour
             rgbd2d.velocity = new Vector2(0f, 0f);
         }
     }
-    //private void OnTriggerEnter2D(Collider2D other)
+
+
+    //private void OnTriggerEnter2D(Collider2D other) [this function is to use for non collidable objects]
     //{
     //    if (other.tag == "Door")
     //    {
@@ -68,13 +74,17 @@ public class PlayerController : MonoBehaviour
     //    }
     //}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) // [this function is used for collision test]
     {
-        if (collision.tag == "Door")
+        if (collision.gameObject == door)
         {
-            Debug.Log("Level Completed");
             gamewonpanel.SetActive(true);
             isgamewon = true;
         }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // (or method )SceneManager.LoadScene(0);
     }
 }

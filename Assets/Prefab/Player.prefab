@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3e23b845acd81cd4596829bff8b7dc9d, type: 3}
   m_Color: {r: 0.9339623, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rgbd2d: {fileID: 70642727}
+  gamewonpanel: {fileID: 0}
+  door: {fileID: 0}
   speed: 2
   acceleration: 2
   maxspeed: 60
